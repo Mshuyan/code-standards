@@ -69,3 +69,8 @@
 
 时间类型不使用`Date`、`LocalDateTime`，这两个时间类型不包含时区信息，需要使用`Instant`时间戳类型
 
+### 返回响应
+
++ 返回响应必须使用`ApiResult`返回
++ service层不可以直接返回`ApiResult`，`ApiResult`需要在`Controlelr`层统一进行封装
+
