@@ -74,3 +74,7 @@
 + 返回响应必须使用`ApiResult`返回
 + service层不可以直接返回`ApiResult`，`ApiResult`需要在`Controlelr`层统一进行封装
 
+### 数据库
+
++ 不允许存在超过3个表以上的表关联查询，再java代码中分步实现
+
