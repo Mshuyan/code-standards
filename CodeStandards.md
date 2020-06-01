@@ -67,12 +67,12 @@
 
 #### QueryWrapper
 
-+ 使用`QueryWrapper`时，属性名必须在实体类中进行常量定义，不可以使用魔法值
++ 使用`QueryWrapper`时，尽量使用`lambda`表达式，避免使用魔法值
 
   ```java
   QueryWrapper<GsSysUserRole> userRoleQueryWrapper = new QueryWrapper<>();
-  userRoleQueryWrapper.eq(GsSysUserRole.PARTY_ID,Dict111PartiesEnum.SELF.getCode()).eq(GsSysUserRole.ROLE_CODE, RoleCodeConstants.QC_ML_DIANWEN);
-  List<GsSysUserRole> userRoles = gsSysUserRoleMapper.selectList(userRoleQueryWrapper);
+              userRoleQueryWrapper.lambda().eq(GsSysUserRole::getPartyId,Dict111PartiesEnum.SELF.getCode()).eq(GsSysUserRole::getRoleCode, RoleCodeConstants.QC_ML_DIANWEN);
+              List<GsSysUserRole> userRoles = gsSysUserRoleMapper.selectList(userRoleQueryWrapper);
   ```
 
 ### 时间类型
