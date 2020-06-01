@@ -71,8 +71,8 @@
 
   ```java
   QueryWrapper<GsSysUserRole> userRoleQueryWrapper = new QueryWrapper<>();
-              userRoleQueryWrapper.lambda().eq(GsSysUserRole::getPartyId,Dict111PartiesEnum.SELF.getCode()).eq(GsSysUserRole::getRoleCode, RoleCodeConstants.QC_ML_DIANWEN);
-              List<GsSysUserRole> userRoles = gsSysUserRoleMapper.selectList(userRoleQueryWrapper);
+  userRoleQueryWrapper.lambda().eq(GsSysUserRole::getPartyId,Dict111PartiesEnum.SELF.getCode()).eq(GsSysUserRole::getRoleCode, RoleCodeConstants.QC_ML_DIANWEN);
+  List<GsSysUserRole> userRoles = gsSysUserRoleMapper.selectList(userRoleQueryWrapper);
   ```
 
 ### 时间类型
