@@ -65,6 +65,16 @@
 
 所有的分页查询，必须使用`PageQuery`对象传递分页参数，不可以使用传递查询条件的`query`继承`IPage`
 
+#### QueryWrapper
+
++ 使用`QueryWrapper`时，属性名必须在实体类中进行常量定义，不可以使用魔法值
+
+  ```java
+  QueryWrapper<GsSysUserRole> userRoleQueryWrapper = new QueryWrapper<>();
+  userRoleQueryWrapper.eq(GsSysUserRole.PARTY_ID,Dict111PartiesEnum.SELF.getCode()).eq(GsSysUserRole.ROLE_CODE, RoleCodeConstants.QC_ML_DIANWEN);
+  List<GsSysUserRole> userRoles = gsSysUserRoleMapper.selectList(userRoleQueryWrapper);
+  ```
+
 ### 时间类型
 
 时间类型不使用`Date`、`LocalDateTime`，这两个时间类型不包含时区信息，需要使用`Instant`时间戳类型
